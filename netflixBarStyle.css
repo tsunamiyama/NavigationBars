@@ -2,15 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 .netflix_navButtons{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 .netflix_nonbutton{
     color: white;
     margin: 0px 30px 0px 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .netflix_nonbutton:hover{
     cursor: pointer;
@@ -53,24 +59,54 @@
 .netflix_hasDropMenu{
     display: flex;
     justify-content: center;
-    align-items: right;
-}
-.netflix_dropMenu{
+    align-items: center;
     position: relative;
     height: fit-content;
     width: fit-content;
+}
+.netflix_dropMenu{
+    display: block;
+    height: fit-content;
+    width: 200px;
+    visibility: hidden;
+    transition: visibility 0.1s;
 }
 .netflix_hasDropMenu .netflix_dropMenu{
     background-color: hsla(0, 100%, 0%, 75%);
     width: fit-content;
     height: fit-content;
-    top: 100%;
+    top: 165%;
+    right: 30px;
     position: absolute;
     z-index: 1;
 }
+.netflix_hasDropMenu:hover .netflix_dropMenu{
+    visibility: visible;
+    cursor: pointer;
+}
+
+.netflix_hasDropMenu .netflix_dropMenu::after{
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 95%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+.netflix_dropMenu:hover{
+    visibility: visible;
+    cursor: pointer;
+}
 .netflix_showCard{
-    height: 100px;
-    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: solid gray 1px;
+    height: 125px;
+    width: 400px;
+    color: white;
+    font-size: large;
 }
 #netflixBar{
     display: flex;
